@@ -11,58 +11,45 @@
     <header>
       <h1>Parcels & Trucks Service</h1>
     </header>
-    <form action="/add" method="POST">
+    <form action="/trucks" method="POST">
       <fieldset>
-        <h3>Create a new Parcel</h3>
-        <label for="parcelID">Parcel ID</label>
+        <h3>Create a new Truck</h3>
+        <label for="parcelID">Truck ID</label>
         <input type="text" id="parcelID" name="parcelID" required />
         <br /><br />
-        <label>Weight</label>
+        <label>Capacity</label>
         <input
           type="number"
-          id="weight"
-          name="weight"
+          id="capacity"
+          name="capacity"
+          min="1"
+          max="500"
+          required
+        />
+        <br /><br />
+        <button type="submit">Create</button>
+      </fieldset>
+    </form>
+    <form action="/view" method="POST">
+      <fieldset>
+        <h3>Add a Parcel</h3>
+        <label>Truck ID</label>
+        <input type="text" id="trId" name="trId" required />
+        <br /><br />
+        <label>Parcel ID</label>
+        <input type="text" id="parId" name="parId" required />
+        <br /><br />
+        <label>Parcel Weight</label>
+        <input
+          type="number"
+          id="parWgt"
+          name="parWgt"
           min="1"
           max="300"
           required
         />
         <br /><br />
-        <button type="reset">Reset</button>
-        <button type="submit">Submit</button>
-      </fieldset>
-    </form>
-    <form action="/view" method="POST">
-      <fieldset>
-        <h3>View an employee</h3>
-        <label>Employee ID</label>
-        <input type="text" id="empID" name="id" required />
-        <br /><br />
-        <button type="reset">Reset</button>
-        <button type="submit">Submit</button>
-        <br /><br /><br />
-      </fieldset>
-    </form>
-    <form action="/update" method="POST">
-      <fieldset>
-        <h3>Update an employee</h3>
-        <label>Employee ID</label>
-        <input type="text" id="empID" name="id" required />
-        <br /><br />
-        <label>New Name</label>
-        <input type="text" id="name" name="name" required />
-        <br /><br />
-        <button type="reset">Reset</button>
-        <button type="submit">Submit</button>
-      </fieldset>
-    </form>
-    <form action="/delete" method="POST">
-      <fieldset>
-        <h3>Delete an employee</h3>
-        <label>Employee ID</label>
-        <input type="text" id="empID" name="id" required />
-        <br /><br />
-        <button type="reset">Reset</button>
-        <button type="submit">Submit</button>
+        <button type="submit">Add</button>
         <br /><br /><br />
       </fieldset>
     </form>

@@ -13,11 +13,19 @@ class Truck {
   addParcel(parcel) {
     this.parcels.push(parcel);
     this.#increaseCurrentWeight(parcel.getWeight());
+    this.parcelCapacity--;
   }
 
-  removeParcel() {
-    const removedParcel = this.parcels.pop();
+  getParcels() {
+    return this.parcels;
+  }
+
+  removeParcel(position) {
+    const removedParcel = this.parcels[position];
+    this.parcels.splice(position, 1);
     this.#decreaseCurrentWeight(removedParcel.getWeight());
+    this.parcelCapacity++;
+    return removedParcel;
   }
 
   getTruckWeight() {

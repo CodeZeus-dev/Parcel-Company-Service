@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --verbose ./src"
+    "test": "jest --detectOpenHandles --verbose ./src/__tests__"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^27.0.6"
+    "jest": "^27.0.6",
+    "supertest": "^6.1.3"
   },
   "dependencies": {
     "body-parser": "^1.19.0",

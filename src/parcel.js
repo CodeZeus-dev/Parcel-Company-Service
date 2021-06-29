@@ -1,5 +1,5 @@
 class Parcel {
-  constructor(weight) {
+  constructor(id, weight) {
     if (weight === undefined) {
       throw new Error("To create a parcel, its weight is required.");
     } else if (typeof weight !== "number") {
@@ -7,7 +7,12 @@ class Parcel {
     } else if (weight < 1 || weight > 300) {
       throw new Error("A parcel's weight can be between 1 and 300 kg.");
     }
+    this.id = id;
     this.weight = weight;
+  }
+
+  getId() {
+    return this.id;
   }
 
   setWeight(newWeight) {
